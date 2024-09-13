@@ -3,12 +3,16 @@ import { Box, Flex, Heading, Text, Button, Image, Container } from '@chakra-ui/r
 
 export default function AboutUs() {
   return (
-    <Box as="section" py={16} bg="#F7F7FA" position='relative'>
-      <Container maxW="container.xl">
-        <Flex direction={{ base: 'column', md: 'row' }} align="stretch" justify="space-between">
-          <Box flex={1} mr={{ base: 0, md: 8 }} mb={{ base: 8, md: 0 }} position="relative" minH={{ md: '400px' }}>
+    <Box as="section" bg="#F0F1F7" position='relative'>
+      <Container maxW="container.xl" p={0}>
+        <Flex direction={{ base: 'column', md: 'row' }} align="evenly" minH={{ md: '400px' }}>
+          <Box 
+            flex={1} 
+            display={{ base: 'none', md: 'block' }}
+            position="relative"
+          >
             <Image
-              src="/about.png?height=400&width=600"
+              src="/about.png"
               alt="Cooking ingredients and utensils"
               position="absolute"
               top="0"
@@ -16,22 +20,37 @@ export default function AboutUs() {
               w="100%"
               h="100%"
               objectFit="cover"
-              borderRadius="md"
             />
           </Box>
-          <Box flex={1}>
-            <Heading as="h2" size="xl" mb={4} color="blue.900">
-              About Us
-            </Heading>
-            <Text mb={6} color="gray.600">
-            {` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-              specimen book. It has survived not only five centuries.`}
-            </Text>
-            <Button colorScheme="red" size="lg" borderRadius="full">
+          <Flex 
+            flex={1} 
+            direction="column" 
+            justify="center" 
+            align={{ base: 'center', md: 'flex-start' }}
+            p={{ base: 8, md: 16 }}
+            bg="#F0F1F7"
+          >
+           <div className='flex flex-col md:ml-12'>
+            <Heading as="h2" size="xl" mb={4} color="#0E2368">
+                About Us
+              </Heading>
+              <Text mb={6} color="#444957" maxW={447} textAlign={{ base: 'center', md: 'left' }}>
+              {` Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. t has survived not only five centuries.`}
+              </Text>
+            </div>
+            <Button 
+              colorScheme="red" 
+              size="lg" 
+              ml={{lg:12}}
+              borderRadius="full" 
+              px={8}
+              bg="#E23744"
+              color="white"
+              _hover={{ bg: '#C62E3A' }}
+            >
               Read More
             </Button>
-          </Box>
+          </Flex>
         </Flex>
       </Container>
     </Box>
