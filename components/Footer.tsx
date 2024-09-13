@@ -13,7 +13,13 @@ import {
 } from '@chakra-ui/react'
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 
-const ListHeader = ({ children }) => {
+interface Props{
+  children : React.ReactNode
+  label :string
+  href : string
+} 
+
+const ListHeader = ({ children }:{children : React.ReactNode}) => {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
       {children}
@@ -21,7 +27,7 @@ const ListHeader = ({ children }) => {
   )
 }
 
-const SocialButton = ({ children, label, href }) => {
+const SocialButton = ({ children, label, href }:Props) => {
   return (
     <chakra.button
       bg={'blackAlpha.100'}
@@ -48,7 +54,7 @@ export default function LargeWithLogoCentered() {
   return (
     <Box bg={'#F8F8F8'} color={'gray.700'}>
       <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8} alignItems="center">
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}  alignItems={"center"}>
           <Box>
             <Image src="/truck.png" alt="Logo" w="161px" h="125px" />
           </Box>
@@ -73,7 +79,7 @@ export default function LargeWithLogoCentered() {
           </Stack>
           <Stack spacing={4}>
             <ListHeader>Social Links</ListHeader>
-            <Flex fontSize={100} w={100} direction={'row'} gap={8} justifyContent="flex-start">
+            <Flex fontSize={100} w={100} direction={'row'} gap={8} justifyContent="flex-start" >
               <SocialButton label={'Instagram'} href={'#'}>
                 <FaInstagram />
               </SocialButton>

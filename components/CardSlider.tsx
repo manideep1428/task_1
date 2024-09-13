@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import FoodCard from "./FoodCard"
 import { foodItems } from "@/data/data"
 
-
+//@ts-expect-error mkn
 const MotionGrid = motion(Grid)
 
 export default function Slider() {
